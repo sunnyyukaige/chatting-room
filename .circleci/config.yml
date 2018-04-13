@@ -23,7 +23,7 @@ jobs:
         
       - run: 
           name: Running unit tests
-          command: yarn test --ci --testResultProcessor='jest-junit'
+          command: yarn test --ci --testResultsProcessor="jest-junit"
           environment:
             JEST_JUNIT_OUTPUT: "test-results/Jest/js-test-result.xml"
 
