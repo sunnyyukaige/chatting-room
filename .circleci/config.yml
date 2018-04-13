@@ -69,7 +69,7 @@ jobs:
             DOCKER_LOGIN=`aws ecr get-login --no-include-email --region us-east-1` && $DOCKER_LOGIN
             docker push $AWS_ECR_URI:$CIRCLE_SHA1
 
-     - run:
+      - run:
           name: Deploy image
           command: REGION=us-east-1 CLUSTER=js-workshop SERVICE=js-workshop-sunny-api CONTAINER=app IMAGE=$AWS_ECR_URI IMAGE_TAG=$CIRCLE_SHA1 ecs-deploy
     
